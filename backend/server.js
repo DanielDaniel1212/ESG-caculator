@@ -6,7 +6,7 @@ app.use(cors()); // <- ADD THIS
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("Hello from backend!");
+  res.send("Hello from hi backend!");
 });
 
 app.get("/api/status", (req, res) => {

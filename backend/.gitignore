@@ -1,0 +1,29 @@
+# dependencies
+/node_modules
+
+# dotenv environment variables
+.env
+.env.*.local
+
+# log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS-specific
+.DS_Store
+
+# optional build artifacts (if you're compiling anything)
+dist/
+build/
+
+# coverage reports (if you use testing)
+coverage/
+
+# editor folders
+.vscode/
+.idea/
+
+# Docker
+docker-compose.override.yml
+*.local.yml

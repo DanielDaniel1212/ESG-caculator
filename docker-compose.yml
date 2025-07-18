@@ -1,4 +1,4 @@
-version: "3.9"
+#version: "3.9"
 
 services:
   frontend:
@@ -6,12 +6,13 @@ services:
       context: ./frontend
       dockerfile: Dockerfile.dev
     ports:
-      - "3000:3000"
+      - "5173:5173"
     volumes:
       - ./frontend:/app
-      - /app/node_modules/ # <- note the trailing slash
+      - /app/node_modules/ # exclude node_modules from host
     environment:
       - CHOKIDAR_USEPOLLING=true
+      - FAST_REFRESH=true
     depends_on:
       - backend
 
@@ -24,6 +25,8 @@ services:
     volumes:
       - ./backend:/app
       - /app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
     depends_on:
       - mongo
 
