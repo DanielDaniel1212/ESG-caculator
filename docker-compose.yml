@@ -1,4 +1,4 @@
-#version: "3.9"
+version: "3.9"
 
 services:
   frontend:
@@ -9,10 +9,9 @@ services:
       - "5173:5173"
     volumes:
       - ./frontend:/app
-      - /app/node_modules/ # exclude node_modules from host
+      - /app/node_modules
     environment:
       - CHOKIDAR_USEPOLLING=true
-      - FAST_REFRESH=true
     depends_on:
       - backend
 
